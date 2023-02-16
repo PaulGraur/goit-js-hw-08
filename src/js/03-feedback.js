@@ -14,6 +14,8 @@ const refs = {
 refs.form.addEventListener('input', throttle(storageFormData));
 refs.form.addEventListener('submit', throttle(onFromSubmit));
 
+reloadPage();
+
 function storageFormData(event) {
   formData[event.target.name] = event.target.value.trim();
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
